@@ -1,5 +1,5 @@
 # O-n-X
   Nortts and Crosses using RayLib.
 
-# td
+# ToDo
   menu, singleplayer, online multiplayer
