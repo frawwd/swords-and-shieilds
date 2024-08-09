@@ -1,11 +1,11 @@
-## Swords and sheilds
+# Swords and sheilds
   Nortts and Crosses using RayLib.
 
 Classic norts and croses written in c++ using raylib
 Uses vcpkg package Manager for raylib dependency
 
 
-# ToDo
+## ToDo
   Make a menu: X, 
   Add singleplayer: X,
   Add Swords :)
