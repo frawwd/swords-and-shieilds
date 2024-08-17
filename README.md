@@ -13,3 +13,5 @@ Uses vcpkg package Manager for raylib dependency
   online multiplayer ?
 
 ![screenshot](ss1.png)
+
+![screenshot](ss2.png)
