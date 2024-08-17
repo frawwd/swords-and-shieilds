@@ -64,12 +64,15 @@ int main()
         } break;
         case GAME:
         {
-            if (!game.wevegotawinner() && game.key != 's') {
+            game.gamenotwon = game.wevegotawinner();
+            if (!game.gamenotwon && game.key != 's') {
                 if (IsKeyPressed(KEY_KP_7)) {
                     game.loc = 1;
                     game.GameUpdate();
                     if (game.Mode == 1) {
                         game.GameEasyComputer();
+                        game.gamenotwon = game.wevegotawinner();
+                        game.swapkey();
                     }
                 }
                 if (IsKeyPressed(KEY_KP_8)) {
@@ -188,12 +191,23 @@ int main()
                 }
             }
             if (game.wevegotawinner()) {
-                if (game.key == 'x') {
-                    DrawText("O has won, Press 0", 30, 915, 60, red);
+                if (game.Mode == 1) {
+                    if (game.key == 'o') {
+                        DrawText("O has won, Press 0", 30, 915, 60, red);
+                    }
+                    else if (game.key == 'x') {
+                        DrawText("X has won, Press 0", 30, 915, 60, red);
+                    }
                 }
-                else if (game.key == 'o') {
-                    DrawText("X has won, Press 0", 30, 915, 60, red);
+                else {
+                    if (game.key == 'x') {
+                        DrawText("O has won, Press 0", 30, 915, 60, red);
+                    }
+                    else if (game.key == 'o') {
+                        DrawText("X has won, Press 0", 30, 915, 60, red);
+                    }
                 }
+                // is inversed in multiplayer?
             }
             else if (game.PlayerTurnCount > 8) {
                 DrawText(" Draw, Press 0.", 30, 915, 60, red);
