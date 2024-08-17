@@ -10,6 +10,7 @@ Game::Game()
 }
 void Game::GameClear()
 {
+    gamenotwon = false;
     key = 's';
     loc = 0;
     PlayerTurnCount = 0;
@@ -241,33 +242,40 @@ bool Game::wevegotawinner() {
     return false;
 }
 
-void Game::GameEasyComputer() {
-    // Invetes the key
-    char nextkey;
+void Game::swapkey() {
     if (key == 'x') {
         key = 'o';
-        nextkey = 'x';
     }
     else if (key == 'o') {
         key = 'x';
-        nextkey = 'o';
     }
     else {
         key = 'o';
-        nextkey = 'x';
+    }
+}
+
+void Game::GameEasyComputer() {
+    if (key == 'x') {
+        key = 'o';
+    }
+    else if (key == 'o') {
+        key = 'x';
+    }
+    else {
+        key = 'o';
     }
 
     // Gen random move :
     int x, y;
     x = GetRandomValue(0, 2);
     y = GetRandomValue(0, 2);
-    while (!canmove2(x, y)) {
-
+    while (!canmove2(x, y) && PlayerTurnCount < 10) {
+        x = GetRandomValue(0, 2);
+        y = GetRandomValue(0, 2);
+        std::cout << "1";
     }
     std::cout << x << ", " << y << std::endl;
     // Check if random move is valid
     // if move is valid execute it and end turn.
-
     // change key back for the player
-    key = nextkey;
 }
