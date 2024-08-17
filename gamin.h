@@ -10,6 +10,7 @@ public:
     bool wevegotawinner();
     void GameClear();
     void GameEasyComputer();
+    void swapkey();
     char key;
     bool comturn;
     int loc;
@@ -21,6 +22,7 @@ public:
         {0,0,0},
     };
     int Mode; // 1 for single , 2 for verses , 3 for online
+    bool gamenotwon;
 
 private:
     bool canmove2(int x, int y);
