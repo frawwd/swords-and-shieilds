@@ -12,4 +12,4 @@ Uses vcpkg package Manager for raylib dependency
   Add Sheilds ///
   online multiplayer ?
 
-![Alt text](relative%20path/ss1.png?raw=true "Title")
+![screenshot](ss1.png)
